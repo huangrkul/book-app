@@ -1,0 +1,29 @@
+<section class="form-section">
+  <button class="close-btn">Close</button>
+  <% if(isEditForm === true) { %>
+  <form action="/update/<%= bookInfo.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+  <% } else { %>
+  <form action="/add" method="post">
+  <% } %>
+    <input type="text" name="title" value="<%- bookInfo.title %>" required>
+    <input type="text" name="author" value="<%- bookInfo.author %>" required>
+    <input type="text" name="image_url" value="<%- bookInfo.image_url %>" required>
+    <input type="text" name="isbn" value="<%- bookInfo.isbn %>" placeholder="">
+    <textarea name="description" placeholder="" cols='30' rows='10' required><%= bookInfo.description %></textarea>
+    <input type="text" name="bookshelf" placeholder="bookshelf name">
+    <select>
+      <option selected = "<%= bookInfo.bookshelf %>"><%= bookInfo.bookshelf %></option>
+      <% bookshelves.forEach(shelf =>{ %>
+        <% if(shelf.bookshelf !== bookInfo.bookshelf) { %>
+          <option value = "<%= bookInfo.bookshelf %>"><%= shelf.bookshelf %></option>
+        <% } %>
+      <% }) %>
+    </select>
+    <% if(isEditForm === true) { %>
+      <button type="submit">Update Book</button>
+    <% } else { %>
+      <button type="submit">Add to Database</button>
+    <% } %>
+    </form>
+  </section>

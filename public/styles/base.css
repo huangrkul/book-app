@@ -1,0 +1,20 @@
+@import 'layout.css';
+@import 'modules.css';
+@import 'fonts.css';
+
+body{
+  background-color: #998c69;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #1d0d04;
+}
+
+.favorite-books section p:nth-child(4), 
+.favorite-books section p:nth-child(5), 
+.favorite-books section .select-btn, 
+.form-section, 
+.single-book .select-btn, 
+.search-page section p:nth-child(5) 
+{
+  display: none;
+}

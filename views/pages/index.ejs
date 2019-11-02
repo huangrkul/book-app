@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../layout/head') %>
+</head>
+<body onload="init()">
+  <%- include('../layout/header') %>
+  <article class="favorite-books">
+    <% books.forEach(book => { %>
+      <%- include('books/detail', {bookInfo: book}) %>
+      <div><a href="/books/<%= book.id %>">View Details</a></div>
+    <% }) %>
+    <h3><%= books.length %></h3>
+  </article>
+  <%- include('../layout/footer') %>
+</body>
+</html>

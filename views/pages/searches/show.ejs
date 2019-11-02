@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../layout/head') %>
+  </head>
+  <body onload="init()">
+    <%- include('../../layout/header') %>
+    <h1>Search Results</h1>
+    <article class="search-page">
+      <% books.forEach(book => { %>
+        <%- include('../books/detail', {bookInfo: book}) %>
+        <%- include('../books/edit', {bookInfo: book}) %>
+      <% }) %>
+    </article>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../js/search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../layout/head') %>
+  </head>
+  <body onload="init()">
+      <%- include('../../layout/header') %>
+    <main>
+      <h4>Add New Book Entry</h4>
+      <!-- action visits the route and method is the route method -->
+      <form action='/searches' method='post'>
+        <input type="text" name="search" placeholder="Enter a title or author" required>
+        <fieldset>
+          <label for="title">
+            <span>Title</span>
+            <input type="radio" name="search" value="title" required>
+          </label>
+        </fieldset>
+
+        <fieldset>
+            <label for="author">
+              <span>Author</span>
+              <input type="radio" name="search" value="author" required>
+            </label>
+          </fieldset>
+          <button type="submit">Search the Google Books API</button>
+      </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>
