@@ -5,25 +5,22 @@
   </head>
   <body onload="init()">
       <%- include('../../layout/header') %>
-    <main>
-      <h4>Add New Book Entry</h4>
+    <main class="new-search">
+      <h1 class="title-font">Search The Google Books API</h1>
       <!-- action visits the route and method is the route method -->
       <form action='/searches' method='post'>
         <input type="text" name="search" placeholder="Enter a title or author" required>
-        <fieldset>
+        <section>
           <label for="title">
             <span>Title</span>
             <input type="radio" name="search" value="title" required>
           </label>
-        </fieldset>
-
-        <fieldset>
-            <label for="author">
-              <span>Author</span>
-              <input type="radio" name="search" value="author" required>
-            </label>
-          </fieldset>
-          <button type="submit">Search the Google Books API</button>
+          <label for="author">
+            <span>Author</span>
+            <input type="radio" name="search" value="author" required>
+          </label>
+          <button type="submit">Search!</button>
+        </section>
       </form>
     </main>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

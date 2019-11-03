@@ -2,19 +2,26 @@
 @import 'modules.css';
 @import 'fonts.css';
 
-body{
-  background-color: #998c69;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  color: #1d0d04;
+* {
+  box-sizing: border-box;
 }
 
-.favorite-books section p:nth-child(4), 
-.favorite-books section p:nth-child(5), 
-.favorite-books section .select-btn, 
+body{
+  background-image: url('../assets/pattern.jpg');
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  color: #301607;
+}
+
+.favorite-books .book-container p:nth-child(4), 
+.favorite-books .book-container p:nth-child(5), 
+.favorite-books .book-container p:nth-child(6), 
+.favorite-books .book-container .select-btn, 
 .form-section, 
 .single-book .select-btn, 
-.search-page section p:nth-child(5) 
+.search-results .book-container p:nth-child(5),
+.search-results .book-container p:nth-child(6) 
 {
   display: none;
 }

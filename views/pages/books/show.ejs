@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=acme|PT+Sans+Narrow&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/base.css">
     <title>Book app</title>
   </head>
   <body onload="init()">
+    <%- include('../../layout/header') %>
     <article class="single-book">
-      <%- include('../../layout/header') %>
       <%- include('detail') %>
       <%- include('edit') %>
+      <section>
+        <button class="update-btn">Update Details</button>
+        <form action="/delete/<%= bookInfo.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button class="delete-btn" type="submit">Delete Book</button>
+        </form>
+      </section>
     </article>
-    <button class="update-btn">Update Details</button>
-    <form action="/delete/<%= bookInfo.id %>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button class="delete-btn" type="submit">Delete Book</button>
-    </form>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="../js/single.js"></script>
   </body>
