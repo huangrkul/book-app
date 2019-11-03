@@ -20,7 +20,8 @@ body{
 .favorite-books .book-container .select-btn, 
 .form-section, 
 .single-book .select-btn, 
-.search-page book-container p:nth-child(6) 
+.search-results .book-container p:nth-child(5),
+.search-results .book-container p:nth-child(6) 
 {
   display: none;
 }

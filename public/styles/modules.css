@@ -38,22 +38,6 @@
   background-color: #0d2e49;
 }
 
-nav {
-  text-align: center;
-  transition: all 300ms ease-in-out;
-}
-
-.nav-hide {
-  -webkit-transform: translateY(-120%);
-  transform: translateY(-120%);
-  opacity: 0;
-}
-.nav-reveal {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%); 
-  opacity: 1;
-}
-
 nav ul li {
   border: 1px solid #10293f;
   padding: 0.5em;

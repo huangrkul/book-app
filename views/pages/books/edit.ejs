@@ -7,24 +7,24 @@
   <form action="/add" method="post">
     <% } %>
     <ul>
-      <li><label for="image_url">Image URL: </label></li>
-      <li><input type="text" name="image_url" value="<%- bookInfo.image_url %>" required></li>
+      <li><label for="form-image">Image URL: </label></li>
+      <li><input id="form-image" type="text" name="image_url" value="<%- bookInfo.image_url %>" required></li>
       <li><label>Title: </label></li>
       <li><input type="text" name="title" value="<%- bookInfo.title %>" required></li>
       <li><label>Author: </label></li>
       <li><input type="text" name="author" value="<%- bookInfo.author %>" required></li>
       <li><label>Description: </label></li>
-      <li><textarea name="description" cols='24' rows='10' required><%= bookInfo.description %></textarea></li>
+      <li><textarea name="description" rows='10' required><%= bookInfo.description %></textarea></li>
       <li><label>ISBN: </label></li>
       <li><input type="text" name="isbn" value="<%- bookInfo.isbn %>" placeholder=""></li>
       <li><label>New Bookshelf: </label></li>
-      <li><input type="text" name="bookshelf" placeholder="bookshelf name"></li>
+      <li><input class="book-shelf" type="text" name="bookshelf" value="" placeholder="bookshelf name"></li>
       <li><label>Bookshelves: </label></li>
       <li><select>
             <option selected = "<%= bookInfo.bookshelf %>"><%= bookInfo.bookshelf %></option>
             <% bookshelves.forEach(shelf =>{ %>
               <% if(shelf.bookshelf !== bookInfo.bookshelf) { %>
-                <option value = "<%= bookInfo.bookshelf %>"><%= shelf.bookshelf %></option>
+                <option value = "<%= shelf.bookshelf %>"><%= shelf.bookshelf %></option>
               <% } %>
             <% }) %>
           </select></li>
