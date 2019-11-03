@@ -52,6 +52,10 @@ function renderBookIndex(req, res){
       const booksArr = results.rows
       res.render('pages/index', {books: booksArr});
     })
+    .catch((error) => {
+      console.error(error);
+      handleError(error, res);
+    });
 }
 
 //renders search page to search in Google Book API
@@ -104,7 +108,10 @@ function addBook(req, res) {
       let id = results.rows[0].id;
       res.redirect(`/books/${id}`);
     })
-    .catch(err => handleError(err, res));
+    .catch((error) => {
+      console.error(error);
+      handleError(error, res);
+    });
 }
 
 //This function renders a single book (and all of its info) on the show.ejs
@@ -121,7 +128,10 @@ function singleBook(req, res){
           res.render('pages/books/show', {bookInfo:selectedBook, isEditForm: true, bookshelves: shelvesArray})
         })
     })
-    .catch(err => {console.error(err)});
+    .catch((error) => {
+      console.error(error);
+      handleError(error, res);
+    });
 }
 
 //populate drop down menu with unique bookshelf categories
@@ -140,7 +150,10 @@ function updateBook(req, res){
     .then(() => {
       res.redirect(`/books/${req.params.id}`);
     })
-    .catch(err => {console.error(err)});
+    .catch((error) => {
+      console.error(error);
+      handleError(error, res);
+    });
 }
 
 //allow book deletion
@@ -152,6 +165,10 @@ function deleteBook(req, res){
     .then(() =>{
       res.redirect('/');
     })
+    .catch((error) => {
+      console.error(error);
+      handleError(error, res);
+    });
 }
 
 //this is the Book constructor that handles data formatting.
