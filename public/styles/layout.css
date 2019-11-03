@@ -35,7 +35,7 @@ nav {
   margin-top: 2em;
 }
 
-.single-book, .fav-book, .result {
+.single-book, .fav-book, .result{
   margin: 2em auto;
   height: 100%;
   padding: 1em;
@@ -60,7 +60,7 @@ nav {
   flex: 0 0 80%;
 }
 
-.new-search {
+.new-search, .error-page {
   width: 400px;
   margin: 4em auto;
   background-color: #b08829;
@@ -72,7 +72,7 @@ nav {
   text-align: center;
   padding: 1em;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .new-search form {
@@ -96,6 +96,12 @@ nav {
 .new-search form span {
   font-family: 'Acme', sans-serif;
   font-size: 1.2em;
+  font-weight: bold;
+}
+
+.error-page {
+  text-align: center;
+  font-size: 1.5em;
   font-weight: bold;
 }
 

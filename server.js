@@ -88,7 +88,7 @@ function searchBook(req, res){
     })
     .catch((error) => {
       console.error(error);
-      res.status(500).send('server error.');
+      handleError(error, res);
     });
 }
 
@@ -157,10 +157,16 @@ function deleteBook(req, res){
 //this is the Book constructor that handles data formatting.
 function Book(bookObject){
   const placeholder = `https://i.imgur.com/J5LVHEL.jpg`;
+  let bookImage;
   let regex = /^(http:)/g;
   let isbnStr;
-  if(regex.test(bookObject.image)) {
-    bookObject.image.replace(regex, 'https:');
+  if(bookObject.imageLinks !== undefined){
+    if(regex.test(bookObject.imageLinks.thumbnail)) {
+      bookObject.imageLinks.thumbnail.replace(regex, 'https:');
+    }
+    bookImage = bookObject.imageLinks.thumbnail;
+  } else {
+    bookImage = null;
   }
   if(bookObject.industryIdentifiers !== undefined) {
     isbnStr = `${bookObject.industryIdentifiers[0].type} ${bookObject.industryIdentifiers[0].identifier}`;
@@ -168,7 +174,7 @@ function Book(bookObject){
     isbnStr = 'no isbn available';
   }
 
-  this.image_url = bookObject.imageLinks.thumbnail || placeholder;
+  this.image_url = bookImage || placeholder;
   this.title = bookObject.title || 'no title available';
   this.author = bookObject.authors || 'no author info available';
   this.isbn = isbnStr || 'no isbn available';
