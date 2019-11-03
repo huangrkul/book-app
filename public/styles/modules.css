@@ -10,6 +10,16 @@
   color: #bfd7ec; 
 }
 
+.nav-section h1 {
+  text-align: left;
+  position: absolute;
+  left: 10px;
+  top: 22px;
+  color: #bfd7ec;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
 .menu {
   position: absolute;
   display: flex;
