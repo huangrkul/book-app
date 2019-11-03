@@ -5,13 +5,15 @@
 </head>
 <body onload="init()">
   <%- include('../layout/header') %>
-  <article class="favorite-books">
+  <h3 class="fav-bar title-font">You have <span><%= books.length %></span> favorite book(s)</h3>
+  <main class="favorite-books">
     <% books.forEach(book => { %>
-      <%- include('books/detail', {bookInfo: book}) %>
-      <div><a href="/books/<%= book.id %>">View Details</a></div>
+      <article class="fav-book">
+        <%- include('books/detail', {bookInfo: book}) %>
+        <a href="/books/<%= book.id %>"><button class="detail-btn">View Details</button></a>
+      </article>
     <% }) %>
-    <h3><%= books.length %></h3>
-  </article>
+  </main>
   <%- include('../layout/footer') %>
 </body>
 </html>

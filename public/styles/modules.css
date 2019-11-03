@@ -61,10 +61,48 @@ nav ul li {
   transition: all 300ms ease-in-out;
 }
 
-nav ul li:last-child {
-  border-top: 0;
+nav ul li:first-child{
+  border-bottom: 0;
 }
 
 nav ul li:hover {
   background-color: #3a5e7e; 
+}
+
+.fav-book .detail-btn,
+.new-search form button,
+.single-book section:last-of-type button,
+.form-section button,
+.book-container button
+{
+  font-family: 'Acme', sans-serif;
+  font-weight: bold;
+  background-color: #244765;
+  border: 1em solid #244765;
+  border-radius: 1em;
+  color: #bfd7ec;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.fav-book .detail-btn:hover,
+.new-search form button:hover,
+.single-book section:last-of-type button:hover,
+.form-section button:hover,
+.book-container button:hover 
+{
+  background-color: #17344e;
+  border: 1em solid #17344e;
+  color: white;
+}
+
+.fav-book .detail-btn:active,
+.new-search form button:active,
+.single-book section:last-of-type button:active,
+.form-section button:active,
+.book-container button:active
+{
+  background-color: #b9c8d4;
+  border: 1em solid #b9c8d4;
+  color: #17344e;
 }

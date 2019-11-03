@@ -5,13 +5,15 @@
   </head>
   <body onload="init()">
     <%- include('../../layout/header') %>
-    <h1>Search Results</h1>
-    <article class="search-page">
+    <h1 class="result-bar title-font">Search Results</h1>
+    <main class="search-results">
       <% books.forEach(book => { %>
+      <article class="result">
         <%- include('../books/detail', {bookInfo: book}) %>
         <%- include('../books/edit', {bookInfo: book}) %>
+      </article>
       <% }) %>
-    </article>
+    </main>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="../js/search.js"></script>
   </body>
